@@ -2,18 +2,18 @@ package com.onebill.billhelper.dao;
 
 import java.util.List;
 
-import com.onebill.billhelper.entity.Products;
+import com.onebill.billhelper.dto.ProductsDTO;
 
 public interface ProductsDAO {
 
-	public Products addProduct(Products product);
+	public ProductsDTO addProduct(ProductsDTO product);
 	
-	public Products updateProduct(Products product);
+	public ProductsDTO updateProduct(ProductsDTO product);
 	
-	public Products removeProduct(int productId);
+	public ProductsDTO removeProduct(ProductsDTO product);
 	
-	public List<Products> getAllProduct();
+	public List<ProductsDTO> getAllProduct();
 	
-	public Products getProductById(int productId);
+	public List<ProductsDTO> getProduct(ProductsDTO product);
 	
 }

@@ -47,7 +47,7 @@ public class Bundle {
 	@OneToMany(mappedBy = "bundle")
 	private List<BundleDetails> details;
 
-//	@OneToMany(mappedBy = "bundle")
-//	private List<OverDue> due;
+	@OneToMany(mappedBy = "bundle")
+	private List<OverDue> due;
 
 }

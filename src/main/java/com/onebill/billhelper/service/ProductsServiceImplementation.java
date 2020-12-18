@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.onebill.billhelper.dao.ProductsDAO;
-import com.onebill.billhelper.entity.Products;
+import com.onebill.billhelper.dto.ProductsDTO;
 import com.onebill.billhelper.exception.BillhelperException;
 
 @Service
@@ -16,9 +16,9 @@ public class ProductsServiceImplementation implements ProductsService {
 	private ProductsDAO productsdao;
 
 	@Override
-	public Products addProducts(Products product) {
+	public ProductsDTO addProduct(ProductsDTO product) {
 		System.out.println();
-		Products addPro = productsdao.addProduct(product);
+		ProductsDTO addPro = productsdao.addProduct(product);
 		if (addPro != null) {
 			return addPro;
 		} else {
@@ -27,9 +27,9 @@ public class ProductsServiceImplementation implements ProductsService {
 	}
 
 	@Override
-	public Products removeProducts(int productId) {
+	public ProductsDTO removeProduct(ProductsDTO product) {
 
-		Products remPro = productsdao.removeProduct(productId);
+		ProductsDTO remPro = productsdao.removeProduct(product);
 		if (remPro != null) {
 
 			return remPro;
@@ -41,8 +41,8 @@ public class ProductsServiceImplementation implements ProductsService {
 	}
 
 	@Override
-	public Products updateProducts(Products product) {
-		Products updPro = productsdao.updateProduct(product);
+	public ProductsDTO updateProduct(ProductsDTO product) {
+		ProductsDTO updPro = productsdao.updateProduct(product);
 		if (updPro != null) {
 
 			return updPro;
@@ -54,8 +54,8 @@ public class ProductsServiceImplementation implements ProductsService {
 	}
 
 	@Override
-	public List<Products> getAllProducts() {
-		List<Products> proList = productsdao.getAllProduct();
+	public List<ProductsDTO> getAllProduct() {
+		List<ProductsDTO> proList = productsdao.getAllProduct();
 		if (proList != null) {
 
 			return proList;
@@ -67,8 +67,8 @@ public class ProductsServiceImplementation implements ProductsService {
 	}
 
 	@Override
-	public Products getProductById(int productId) {
-		Products getPro = productsdao.getProductById(productId);
+	public List<ProductsDTO> getProduct(ProductsDTO product) {
+		List<ProductsDTO> getPro = productsdao.getProduct(product);
 		if (getPro != null) {
 
 			return getPro;

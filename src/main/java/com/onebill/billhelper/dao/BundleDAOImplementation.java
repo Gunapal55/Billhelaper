@@ -11,8 +11,10 @@ import javax.persistence.TypedQuery;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Repository;
 
+import com.onebill.billhelper.entity.AddtionalCharges;
 import com.onebill.billhelper.entity.Bundle;
 import com.onebill.billhelper.entity.BundleDetails;
+import com.onebill.billhelper.entity.OverDue;
 
 @Repository
 public class BundleDAOImplementation implements BundleDAO {
@@ -123,6 +125,54 @@ public class BundleDAOImplementation implements BundleDAO {
 		BundleDetails bundleDetail = manager.find(BundleDetails.class, bundleDetailId);
 		return bundleDetail;
 
+	}
+
+	@Override
+	public OverDue addOverDue(OverDue overDue) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OverDue updateOverDue(OverDue overDue) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OverDue deleteOverDue(int overDueId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public OverDue getOverDueById(int overDueId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AddtionalCharges addAddtionalCharges(AddtionalCharges addtional) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AddtionalCharges updateAddtionalCharges(AddtionalCharges addtional) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AddtionalCharges deleteAddtionalCharges(int addtionalChargesId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AddtionalCharges getAddtionalChargesById(int BundleId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

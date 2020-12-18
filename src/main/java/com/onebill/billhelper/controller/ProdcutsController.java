@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.onebill.billhelper.dto.ProductsDTO;
 import com.onebill.billhelper.dto.ResponseDTO;
 import com.onebill.billhelper.entity.Products;
 import com.onebill.billhelper.service.ProductsService;
@@ -25,41 +26,40 @@ public class ProdcutsController {
 	private ProductsService service;
 
 	@ResponseBody
-	@PostMapping("/product")
-	public ResponseDTO getProduct(@RequestBody Products product) {
+	@PostMapping
+	public ResponseDTO getProduct(@RequestBody ProductsDTO product) {
 		ResponseDTO response = new ResponseDTO();
-		response.setData(service.addProducts(product));
+		response.setData(service.addProduct(product));
 		return response;
 	}
 
-	@PutMapping("/product")
-	public ResponseDTO updateProduct(@RequestBody Products product) {
+	@PutMapping
+	public ResponseDTO updateProduct(@RequestBody ProductsDTO product) {
 		ResponseDTO response = new ResponseDTO();
-		response.setData(service.updateProducts(product));
+		response.setData(service.updateProduct(product));
 		return response;
 	}
 
-	@DeleteMapping("/{productId}")
-	public ResponseDTO removeProduct(@PathVariable int productId) {
+	@DeleteMapping
+	public ResponseDTO removeProduct(@RequestBody ProductsDTO product) {
 		ResponseDTO response = new ResponseDTO();
-		response.setData(service.removeProducts(productId));
+		response.setData(service.removeProduct(product));
 		return response;
 
-	}
+	}	
 
 	@GetMapping("/products")
 	public ResponseDTO getAllProducts() {
 		ResponseDTO response = new ResponseDTO();
-		response.setData(service.getAllProducts());
+		response.setData(service.getAllProduct());
 		return response;
 
 	}
 	
-
-	@GetMapping("/{productId}")
-	public ResponseDTO getProductById(@PathVariable int productId) {
+	@GetMapping
+	public ResponseDTO getProductById(@RequestBody ProductsDTO product) {
 		ResponseDTO response = new ResponseDTO();
-		response.setData(service.getProductById(productId));
+		response.setData(service.getProduct(product));
 		return response;
 
 	}
